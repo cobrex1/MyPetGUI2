@@ -1,0 +1,142 @@
+#Worlds which players can't use MyPetGUI Menu at
+black_listed_worlds:
+  - lobby
+  - world_creative
+
+#Get Material names from: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+gui_icons:
+  main_menu_gui:
+    filler: "GRAY_STAINED_GLASS_PANE"
+    inventory: "ENDER_CHEST"
+    beacon: "BEACON"
+    skill_tree: "OAK_SAPLING"
+    ride: "SADDLE"
+    send_away: "LEAD"
+    store_pet: "RED_BED"
+    select_pet: "PIG_SPAWN_EGG"
+    item_pickup: "HOPPER"
+    pet_behavior: "DIAMOND_SWORD"
+    pet_info: "WRITTEN_BOOK"
+    pet_skill_info: "PAPER"
+    pet_shop: "CHEST_MINECART"
+    rename_pet: "NAME_TAG"
+    trade_pet: "GOLD_NUGGET"
+    release_pet: "TNT"
+  behavior_gui:
+    filler: "RED_STAINED_GLASS_PANE"
+    friendly: "ARMOR_STAND"
+    normal: "BONE"
+    raid: "BOW"
+    duel: "DIAMOND_AXE"
+    farm: "DIAMOND_HOE"
+    aggressive: "DIAMOND_SWORD"
+    back: "ARROW"
+
+
+lang:
+  #Main Menu
+  mypetgui_menu_title: "&0MyPet Menu:"
+  mypetgui_icon_title_petinventory: "&ePet Inventory"
+  mypetgui_icon_lore_petinventory:
+    - "&7Open pet's inventory."
+    - "&3/petinventory"
+  mypetgui_icon_title_petbeacon: "&bPet Beacon"
+  mypetgui_icon_lore_petbeacon:
+    - "&7Choose beacon effect for pet."
+    - "&3/petbeacon"
+  mypetgui_icon_title_skilltree: "&aChoose Skill Tree"
+  mypetgui_icon_lore_skilltree:
+    - "&7Pick a skill for pet."
+    - "&3/petchooseskilltree"
+  mypetgui_icon_title_callpet: "&aCall Pet"
+  mypetgui_icon_lore_callpet:
+    - "&7Call a sent away pet to you."
+    - "&3/petcall"
+  mypetgui_icon_title_sendpetaway: "&cSend Pet Away"
+  mypetgui_icon_lore_sendpetaway:
+    - "&7Send away current pet."
+    - "&3/petsendaway"
+  mypetgui_icon_title_storepet: "&cStore Pet"
+  mypetgui_icon_lore_storepet:
+    - "&7Store current pet to your pets storage."
+    - "&3/petstore"
+  mypetgui_icon_title_choosepet: "&aChoose Pet"
+  mypetgui_icon_lore_choosepet:
+    - "&7Pick a pet from your pets storage"
+    - "&3/petswitch"
+  mypetgui_icon_title_petshop: "&6Pets Shop"
+  mypetgui_icon_lore_petshop:
+    - "&7Buy new pet from the pets shop."
+    - "&3/petshop"
+  mypetgui_icon_title_itempickup: "&eToggle Item Pickup"
+  mypetgui_icon_lore_itempickup:
+    - "&7Toggle pet picking up items from ground."
+    - "&3/petpickup"
+  mypetgui_icon_title_petbehavior: "&ePet Behavior"
+  mypetgui_icon_lore_petbehavior:
+    - "&7Choose a behavior for your pet."
+  mypetgui_icon_title_petinfo: "&bPet Info"
+  mypetgui_icon_lore_petinfo:
+    - "&7Display information about current pet."
+    - "&3/petinfo"
+  mypetgui_icon_title_petskillinfo: "&ePet Skill Details"
+  mypetgui_icon_lore_petskillinfo:
+    - "&7Display current skill details of your pet."
+    - "&3/petskill"
+  mypetgui_icon_title_petname: "&eRename Pet"
+  mypetgui_icon_lore_petname:
+    - "&7Rename your pet."
+    - "&7Type the following command in chat"
+    - "&3/petname &f<new name>"
+  mypetgui_icon_title_tradepet: "&aTrade Pet"
+  mypetgui_icon_lore_tradepet:
+    - "&7Trade your pet with another player."
+    - "&3/pettrade &f<player> &7<optional: price>"
+  mypetgui_icon_title_deletepet: "&4Delete Pet"
+  mypetgui_icon_lore_deletepet:
+    - "&7Delete current pet permanently."
+    - "&3/petrelease"
+
+  #Behavior Menu
+  behvaior_menu_title: "&0MyPet Behavior:"
+  behavior_icon_title_friendly: "&aFriendly"
+  behavior_icon_lore_friendly:
+    - "&7Pet will not fight even"
+    - "&7when it is attacked by anything."
+    - "&3/petbehavior Friendly"
+  behavior_icon_title_normal: "&eNormal"
+  behavior_icon_lore_normal:
+    - "&7Pet will act like a normal wolf."
+    - "&3/petbehavior Normal"
+  behavior_icon_title_raid: "&eRaid"
+  behavior_icon_lore_raid:
+    - "&7Like normal but the pet doesn't"
+    - "&7attack players and their pets."
+    - "&3/petbehavior Raid"
+  behavior_icon_title_duel: "&cDuel"
+  behavior_icon_lore_duel:
+    - "&7Pet will attack other pets with active"
+    - "&7duel behavior within a 5 block radius."
+    - "&3/petbehavior Duel"
+  behavior_icon_title_farm: "&cFarm"
+  behavior_icon_lore_farm:
+    - "&7Attacks every Monster within"
+    - "&715 blocks of the owner."
+    - "&3/petbehavior Farm"
+  behavior_icon_title_aggressive: "&4Aggressive"
+  behavior_icon_lore_aggressive:
+    - "&7Pet attacks automatically everything"
+    - "&7within 15 blocks of the owner."
+    - "&3/petbehavior Aggressive"
+  behavior_icon_title_back: "&eBack"
+  behavior_icon_lore_back:
+    - "&7Click to return to the"
+    - "&7main MyPetGUI window."
+    - "&3/pet"
+
+  #Messages
+  messages:
+    message_reloaded: "&aReloaded all configurations successfully."
+    no_permission_reload: "&cSorry, you don't have permission to reload MyPetGUI plugin."
+    no_permission_use: "&cSorry, you don't have permission to open MyPet menu."
+

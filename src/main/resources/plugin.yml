@@ -1,0 +1,28 @@
+name: MyPetGUI2
+version: ${project.version}
+api-version: 1.13
+main: me.cobrex.mypetgui2.MyPetGUI
+prefix: MyPetGUI
+depend: [ MyPet ]
+softdepend: [ PlaceholderAPI ]
+authors: [ Cobrex | Originally by TatoIQ ]
+description: Creates a GUI addon for MyPet commands.
+commands:
+  mypetgui:
+  pet:
+    description: Open MyPetGUI Menu
+  petbmenu:
+    description: Open MyPetGUI Behvaiour Menu
+permissions:
+  mypetgui.*:
+    description: Admin permission
+    default: op
+  mypetgui.use:
+    description: Default to true, set to false to prevent players from opening the menu "/pet", "/petbmenu".
+    default: true
+  mypetgui.reload:
+    description: Reload the configuration of the plugin "/mypetgui reload".
+    default: op
+  mypetgui.shop:
+    description: show/hide shop icon based on the permission
+    default: true
