@@ -1,4 +1,4 @@
-# MyPetGUI
+# MyPetGUI2
 
 Original author of this plugin was tatomc (Potatot_IQ)
 https://github.com/PotatoIQ/MyPetGUI-Plugin
