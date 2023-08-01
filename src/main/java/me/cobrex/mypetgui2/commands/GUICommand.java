@@ -16,6 +16,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GUICommand implements CommandExecutor {
 
@@ -67,7 +68,9 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_petinventory")) {
 					chest_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				inventory_meta.setLore(chest_lore);
+				List<String> inventoryWithPlaceholders = PlaceholderAPI.setPlaceholders(player, chest_lore);
+				inventory_meta.setLore(inventoryWithPlaceholders);
+//				inventory_meta.setLore(chest_lore);
 				inventory.setItemMeta(inventory_meta);
 
 				ItemMeta beacon_meta = beacon.getItemMeta();
@@ -76,7 +79,9 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_petbeacon")) {
 					beacon_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				beacon_meta.setLore(beacon_lore);
+				List<String> beaconWithPlaceholders = PlaceholderAPI.setPlaceholders(player, beacon_lore);
+				beacon_meta.setLore(beaconWithPlaceholders);
+//				beacon_meta.setLore(beacon_lore);
 				beacon.setItemMeta(beacon_meta);
 
 				ItemMeta skill_tree_meta = skill_tree.getItemMeta();
@@ -85,7 +90,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_skilltree")) {
 					skill_tree_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				skill_tree_meta.setLore(skill_tree_lore);
+				List<String> skillWithPlaceholders = PlaceholderAPI.setPlaceholders(player, skill_tree_lore);
+				skill_tree_meta.setLore(skillWithPlaceholders);
 				skill_tree.setItemMeta(skill_tree_meta);
 
 				ItemMeta ride_meta = ride.getItemMeta();
@@ -94,7 +100,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_callpet")) {
 					ride_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				ride_meta.setLore(ride_lore);
+				List<String> rideWithPlaceholders = PlaceholderAPI.setPlaceholders(player, ride_lore);
+				ride_meta.setLore(rideWithPlaceholders);
 				ride.setItemMeta(ride_meta);
 
 				ItemMeta send_away_meta = send_away.getItemMeta();
@@ -103,7 +110,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_sendpetaway")) {
 					send_away_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				send_away_meta.setLore(send_away_lore);
+				List<String> sendawayWithPlaceholders = PlaceholderAPI.setPlaceholders(player, send_away_lore);
+				send_away_meta.setLore(sendawayWithPlaceholders);
 				send_away.setItemMeta(send_away_meta);
 
 				ItemMeta store_pet_meta = store_pet.getItemMeta();
@@ -112,7 +120,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_storepet")) {
 					store_pet_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				store_pet_meta.setLore(store_pet_lore);
+				List<String> storeWithPlaceholders = PlaceholderAPI.setPlaceholders(player, store_pet_lore);
+				store_pet_meta.setLore(storeWithPlaceholders);
 				store_pet.setItemMeta(store_pet_meta);
 
 				ItemMeta select_pet_meta = select_pet.getItemMeta();
@@ -121,7 +130,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_choosepet")) {
 					select_pet_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				select_pet_meta.setLore(select_pet_lore);
+				List<String> selectWithPlaceholders = PlaceholderAPI.setPlaceholders(player, select_pet_lore);
+				select_pet_meta.setLore(selectWithPlaceholders);
 				select_pet.setItemMeta(select_pet_meta);
 
 				ItemMeta item_pickup_meta = item_pickup.getItemMeta();
@@ -130,7 +140,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_itempickup")) {
 					item_pickup_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				item_pickup_meta.setLore(item_pickup_lore);
+				List<String> itempickupWithPlaceholders = PlaceholderAPI.setPlaceholders(player, item_pickup_lore);
+				item_pickup_meta.setLore(itempickupWithPlaceholders);
 				item_pickup.setItemMeta(item_pickup_meta);
 
 				ItemMeta pet_behavior_meta = pet_behavior.getItemMeta();
@@ -139,7 +150,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_petbehavior")) {
 					pet_behavior_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				pet_behavior_meta.setLore(pet_behavior_lore);
+				List<String> setbehaviorWithPlaceholders = PlaceholderAPI.setPlaceholders(player, pet_behavior_lore);
+				pet_behavior_meta.setLore(setbehaviorWithPlaceholders);
 				pet_behavior_meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 				pet_behavior.setItemMeta(pet_behavior_meta);
 
@@ -149,7 +161,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_petinfo")) {
 					pet_info_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				pet_info_meta.setLore(pet_info_lore);
+				List<String> petinfoWithPlaceholders = PlaceholderAPI.setPlaceholders(player, pet_info_lore);
+				pet_info_meta.setLore(petinfoWithPlaceholders);
 				pet_info.setItemMeta(pet_info_meta);
 
 				ItemMeta pet_skill_info_meta = pet_skill_info.getItemMeta();
@@ -158,7 +171,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_petskillinfo")) {
 					pet_skill_info_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				pet_skill_info_meta.setLore(pet_skill_info_lore);
+				List<String> petskillWithPlaceholders = PlaceholderAPI.setPlaceholders(player, pet_skill_info_lore);
+				pet_skill_info_meta.setLore(petskillWithPlaceholders);
 				pet_skill_info.setItemMeta(pet_skill_info_meta);
 
 				ItemMeta pet_shop_meta = pet_shop.getItemMeta();
@@ -168,7 +182,8 @@ public class GUICommand implements CommandExecutor {
 					for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_petshop")) {
 						pet_shop_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 					}
-					pet_shop_meta.setLore(pet_shop_lore);
+					List<String> petshopWithPlaceholders = PlaceholderAPI.setPlaceholders(player, pet_shop_lore);
+					pet_shop_meta.setLore(petshopWithPlaceholders);
 					pet_shop.setItemMeta(pet_shop_meta);
 				} else {
 					pet_shop_meta.setDisplayName(ChatColor.BLACK + " ");
@@ -182,7 +197,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_petname")) {
 					rename_pet_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				rename_pet_meta.setLore(rename_pet_lore);
+				List<String> renameWithPlaceholders = PlaceholderAPI.setPlaceholders(player, rename_pet_lore);
+				rename_pet_meta.setLore(renameWithPlaceholders);
 				rename_pet.setItemMeta(rename_pet_meta);
 
 				ItemMeta trade_pet_meta = trade_pet.getItemMeta();
@@ -191,7 +207,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_tradepet")) {
 					trade_pet_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				trade_pet_meta.setLore(trade_pet_lore);
+				List<String> tradeWithPlaceholders = PlaceholderAPI.setPlaceholders(player, trade_pet_lore);
+				trade_pet_meta.setLore(tradeWithPlaceholders);
 				trade_pet.setItemMeta(trade_pet_meta);
 
 				ItemMeta release_pet_meta = release_pet.getItemMeta();
@@ -200,7 +217,8 @@ public class GUICommand implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.mypetgui_icon_lore_deletepet")) {
 					release_pet_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				release_pet_meta.setLore(release_pet_lore);
+				List<String> releaseWithPlaceholders = PlaceholderAPI.setPlaceholders(player, release_pet_lore);
+				release_pet_meta.setLore(releaseWithPlaceholders);
 				release_pet.setItemMeta(release_pet_meta);
 
 				//Put the items in the inventory

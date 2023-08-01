@@ -4,6 +4,7 @@ package me.cobrex.mypetgui2;
 import me.cobrex.mypetgui2.commands.GUICommand;
 import me.cobrex.mypetgui2.commands.GUICommandBehavior;
 import me.cobrex.mypetgui2.events.ClickEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -23,6 +24,9 @@ public final class MyPetGUI extends JavaPlugin {
 		getCommand("pet").setExecutor(new GUICommand());
 		getCommand("petbmenu").setExecutor(new GUICommandBehavior());
 		getServer().getPluginManager().registerEvents(new ClickEvent(), this);
+
+		if (hasPlaceholderAPI())
+			getServer().getConsoleSender().sendMessage(ChatColor.DARK_AQUA + "[MyPetGUI2] " + ChatColor.WHITE + "PlaceholderAPI Hooked!");
 	}
 
 	@Override
@@ -81,4 +85,7 @@ public final class MyPetGUI extends JavaPlugin {
 		return null;
 	}
 
+	public boolean hasPlaceholderAPI() {
+		return Bukkit.getServer().getPluginManager().getPlugin("PlaceholderAPI") != null;
+	}
 }

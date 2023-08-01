@@ -1,5 +1,6 @@
 package me.cobrex.mypetgui2.commands;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.cobrex.mypetgui2.MyPetGUI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,6 +16,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GUICommandBehavior implements CommandExecutor {
 
@@ -52,7 +54,9 @@ public class GUICommandBehavior implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.behavior_icon_lore_friendly")) {
 					friendly_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				friendly_meta.setLore(friendly_lore);
+				List<String> friendlyWithPlaceholders = PlaceholderAPI.setPlaceholders(player, friendly_lore);
+				friendly_meta.setLore(friendlyWithPlaceholders);
+//				friendly_meta.setLore(friendly_lore);
 				friendly.setItemMeta(friendly_meta);
 
 				ItemMeta normal_meta = normal.getItemMeta();
@@ -61,7 +65,9 @@ public class GUICommandBehavior implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.behavior_icon_lore_normal")) {
 					normal_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				normal_meta.setLore(normal_lore);
+				List<String> normalWithPlaceholders = PlaceholderAPI.setPlaceholders(player, normal_lore);
+				normal_meta.setLore(normalWithPlaceholders);
+//				normal_meta.setLore(normal_lore);
 				normal.setItemMeta(normal_meta);
 
 				ItemMeta raid_meta = raid.getItemMeta();
@@ -70,7 +76,8 @@ public class GUICommandBehavior implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.behavior_icon_lore_raid")) {
 					raid_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				raid_meta.setLore(raid_lore);
+				List<String> raidWithPlaceholders = PlaceholderAPI.setPlaceholders(player, raid_lore);
+				raid_meta.setLore(raidWithPlaceholders);
 				raid.setItemMeta(raid_meta);
 
 				ItemMeta duel_meta = duel.getItemMeta();
@@ -79,7 +86,8 @@ public class GUICommandBehavior implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.behavior_icon_lore_duel")) {
 					duel_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				duel_meta.setLore(duel_lore);
+				List<String> duelWithPlaceholders = PlaceholderAPI.setPlaceholders(player, duel_lore);
+				duel_meta.setLore(duelWithPlaceholders);
 				duel_meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 				duel.setItemMeta(duel_meta);
 
@@ -89,7 +97,8 @@ public class GUICommandBehavior implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.behavior_icon_lore_farm")) {
 					farm_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				farm_meta.setLore(farm_lore);
+				List<String> farmWithPlaceholders = PlaceholderAPI.setPlaceholders(player, farm_lore);
+				farm_meta.setLore(farmWithPlaceholders);
 				farm_meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 				farm.setItemMeta(farm_meta);
 
@@ -99,7 +108,8 @@ public class GUICommandBehavior implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.behavior_icon_lore_aggressive")) {
 					aggressive_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				aggressive_meta.setLore(aggressive_lore);
+				List<String> aggressiveWithPlaceholders = PlaceholderAPI.setPlaceholders(player, aggressive_lore);
+				aggressive_meta.setLore(aggressiveWithPlaceholders);
 				aggressive_meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 				aggressive.setItemMeta(aggressive_meta);
 
@@ -109,7 +119,8 @@ public class GUICommandBehavior implements CommandExecutor {
 				for (String lore_title : plugin.getConfig().getStringList("lang.behavior_icon_lore_back")) {
 					back_lore.add(ChatColor.translateAlternateColorCodes('&', lore_title));
 				}
-				back_meta.setLore(back_lore);
+				List<String> backWithPlaceholders = PlaceholderAPI.setPlaceholders(player, back_lore);
+				back_meta.setLore(backWithPlaceholders);
 				back_meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
 				back.setItemMeta(back_meta);
 
@@ -119,8 +130,6 @@ public class GUICommandBehavior implements CommandExecutor {
 						filler, filler, filler, filler, back, filler, filler, filler, filler};
 				petguib.setContents(menu_items);
 				player.openInventory(petguib);
-
-
 			}
 		}
 
